@@ -38,8 +38,6 @@ void Display(struct Node *p){
         cout<<p->data<<" ";
         p=p->next;
     }
-
-
 }
 int Sum(Node *p){
     int sum=0;
@@ -48,7 +46,6 @@ int Sum(Node *p){
         p=p->next;
     }
     return sum;
-
 }
 int Count(Node *p){
     int count=0;
@@ -58,6 +55,7 @@ int Count(Node *p){
     }
     return count;
 }
+
 int Max(Node *p){
     int max=p->data;
     p=p->next;
@@ -67,6 +65,7 @@ int Max(Node *p){
     }
     return max;
 }
+
 Node *Search(Node *p,int key){
     Node *q;
     while(p){
@@ -81,6 +80,7 @@ Node *Search(Node *p,int key){
     }
     return NULL;
 }
+
 void Insert(int index,int x){
     Node *t,*p;
     if(index==0){
@@ -89,6 +89,7 @@ void Insert(int index,int x){
         t->next=first;
         first=t;
     }
+        
     else if(index>0){
         p=new Node;
         p=first;
@@ -100,10 +101,9 @@ void Insert(int index,int x){
             p->next=t;
         }
         else cout<<"The index is not Valid!"<<endl;
-        
-
     }
 }
+
 void Insert_Last(int x){
     Node *t,*last;
     if(first==NULL){
@@ -111,7 +111,6 @@ void Insert_Last(int x){
         t->data=x;
         t->next=NULL;
         first=t;last=t;
-        
     }
     else{
         t=new Node;
@@ -121,6 +120,7 @@ void Insert_Last(int x){
         last=t; 
     }
 }
+
 void Inserted_Sorted(int x){
     Node *t,*p,*q=NULL;
     t=new Node;
@@ -178,9 +178,8 @@ bool isSorted(Node *p){
         p=p->next;
     }
     return 1;
-    
-        
 }
+
 void Remove_Dup(Node *p){
 
     Node *q=first->next;
@@ -196,6 +195,7 @@ void Remove_Dup(Node *p){
         }
     }
 }
+
 void Reversing_Elements(Node *p){
     int *A,i=0;
     A=new int[Count(p)];
@@ -211,8 +211,8 @@ void Reversing_Elements(Node *p){
         i--;
     }
     delete[] A;
-
 }
+
 void Reversing_Links(Node *p){
     Node *r=NULL,*q=NULL;
     while(p){
@@ -223,6 +223,7 @@ void Reversing_Links(Node *p){
     }
     first=q;
 }
+
 void Countrint(Node *p,Node *q){
     third=p;
     while(p->next){
@@ -231,6 +232,7 @@ void Countrint(Node *p,Node *q){
     p->next=q;
     q=NULL;
 }
+
 void Margring(Node *p,Node *q){
     Node *last;
     if(p->data<=q->data){
@@ -256,14 +258,12 @@ void Margring(Node *p,Node *q){
             last=q;
             q=q->next;
             last->next=NULL;
-            
         }
     }
     if(p)last->next=p;
     if(q)last->next=q;
-    
-    
 }
+
 int main(){
     //int A[]={10,20,30,40,50};
     //int B[]={15,35,65};
